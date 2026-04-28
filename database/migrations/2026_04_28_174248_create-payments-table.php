@@ -15,7 +15,7 @@ return new class extends Migration
         $table->id();
         $table->unsignedBigInteger('appointment_id');
         $table->decimal('amount', 10, 2);
-        $table->string('status')->default('Unpaid'); 
+        $table->string('status')->default('unpaid');
         $table->timestamp('payment_date')->nullable();
         $table->timestamps();
 
