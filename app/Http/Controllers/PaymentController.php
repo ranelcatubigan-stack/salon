@@ -38,7 +38,7 @@ class PaymentController extends Controller
         Payment::create([
             'appointment_id' => $request->appointment_id,
             'amount' => $request->amount,
-            'status' => 'Paid',
+            'status' => 'paid',
             'payment_date' => now()
         ]);
 
@@ -51,7 +51,7 @@ class PaymentController extends Controller
     public function updateStatus($id)
     {
         $payment = Payment::findOrFail($id);
-        $payment->status = $payment->status == 'Paid' ? 'Unpaid' : 'Paid';
+        $payment->status = $payment->status == 'paid' ? 'pnpaid' : 'paid';
         $payment->save();
 
         return back();
